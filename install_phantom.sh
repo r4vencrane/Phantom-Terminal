@@ -22,7 +22,7 @@ lightCyanColour='\033[1;38;5;14m'   # #00ffff (cian encendido)
 brightWhiteColour='\033[1;38;5;15m' # #ffffff (blanco puro)
 
 # --- Reset ---
-endColour='\033[0mu'
+endColour='\033[0m'
 
 #Ctrl+C 
 function ctrl_c(){
