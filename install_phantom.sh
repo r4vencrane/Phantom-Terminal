@@ -54,7 +54,7 @@ function spinner(){
   local SPIN=("◐" "◓" "◑" "◒")
   local i=0
   while true; do 
-    echo -ne "\r[${SPIN[i]}] $1"
+    echo -ne "\r${limaColour}[${SPIN[i]}]${endColour} $1"
     ((i=(i+1)%4))
     sleep 0.1
   done
@@ -115,7 +115,7 @@ function main(){
   echo -e "$(for in in $(seq 1 100); do echo -n '='; done)${endColour}"
   echo -e "\n${limaColour}[+]${endColour}${grayColour} This program requires ${blueColour}sudo${endColour}${grayColour} permissions for a successful installation:${endColour} run sudo $0"
   
-  echo -ne "\n${purpleColour}[~]${endColour}${grayColour} Install Phantom Terminal?${endColour} [y/n]: "
+  echo -ne "\n${purpleColour}[~]${endColour}${grayColour} Install Phantom Terminal?${endColour} ${limaColour}[y/n]:${endColour} "
   read output_show
 
   if [[ $output_show == "y" ]]; then
