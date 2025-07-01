@@ -98,11 +98,11 @@ function installation(){
   alias lla='lsd -lha --group-dirs=first'
   alias ls='lsd --group-dirs=first'
   alias cat='bat'" >> ~/.zshrc 
-  source ~/.zshrc &>/dev/null
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r[✔] ${grayColour}Lsd & Bat Installed.${endColour}\n"
 
   echo -ne "\n[✔] ${grayColour}Finished. Enjoy!${endColour}\n"
+  source ~/.zshrc &>/dev/null
 
 
 }
