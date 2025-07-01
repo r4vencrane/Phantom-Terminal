@@ -22,7 +22,7 @@ lightCyanColour='\033[1;38;5;14m'   # #00ffff (cian encendido)
 brightWhiteColour='\033[1;38;5;15m' # #ffffff (blanco puro)
 
 # --- Reset ---
-endColour='\033[0m'
+endColour='\033[0mu'
 
 #Ctrl+C 
 function ctrl_c(){
@@ -47,6 +47,7 @@ banner="${limaColour}$(cat << "EOF"
 
 EOF
 )${endColour}"
+
 
 # Función de Spinner
 function spinner(){
@@ -113,11 +114,7 @@ function main(){
   echo -e "                                       I N S T A L L A T I O N"
   echo -e "$(for in in $(seq 1 100); do echo -n '='; done)${endColour}"
   echo -e "\n${limaColour}[+]${endColour}${grayColour} This program requires ${blueColour}sudo${endColour}${grayColour} permissions for a successful installation:${endColour} run sudo $0"
-  if [[ $EUID -ne 0 ]]; then
-  echo -e "${redColour}[!] You must run this script as root: ${blueColour}sudo $0${endColour}"
-  exit 1
-  fi
-
+  
   echo -ne "\n${purpleColour}[~]${endColour}${grayColour} Install Phantom Terminal?${endColour} [y/n]: "
   read output_show
 
