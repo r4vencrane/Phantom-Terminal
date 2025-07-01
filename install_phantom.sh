@@ -81,7 +81,6 @@ function installation(){
   spinner "${grayColour}Installing Starship Powerline ${endColour}" &
   SPINNER_PID=$!
   curl -sS https://starship.rs/install.sh | sh -s -- -y > /dev/null 2>&1 #aqui le tenemos que dar que si 
-  clean
   echo 'eval "$(starship init zsh)"' >> ~/.zshrc 
   cp starship.toml ~/.config/
   kill "$SPINNER_PID" &>/dev/null
@@ -89,8 +88,8 @@ function installation(){
 
   spinner "${grayColour}Installing Lsd & bat (ls & cat with steroids) ${endColour}" &
   SPINNER_PID=$!
-  sudo apt install lsd -y 
-  sudo apt install bat -y
+  sudo apt install lsd -y &>/dev/null
+  sudo apt install bat -y &>/dev/null
   echo "# Manual aliases
   alias ll='lsd -lh --group-dirs=first'
   alias la='lsd -a --group-dirs=first'
@@ -98,7 +97,7 @@ function installation(){
   alias lla='lsd -lha --group-dirs=first'
   alias ls='lsd --group-dirs=first'
   alias cat='bat'" >> ~/.zshrc 
-  source ~/.zshrc
+  source ~/.zshrc &>/dev/null
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r[✔] ${grayColour}Lsd & Bat Installed.${endColour}\n"
 
