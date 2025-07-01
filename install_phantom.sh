@@ -102,6 +102,7 @@ function installation(){
   echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
 
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
+  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}"
   source ~/.zshrc &>/dev/null
 
 
@@ -113,7 +114,7 @@ function main(){
   echo -e "\n${turquoiseColour}$(for in in $(seq 1 100); do echo -n '='; done)"
   echo -e "                                       I N S T A L L A T I O N"
   echo -e "$(for in in $(seq 1 100); do echo -n '='; done)${endColour}"
-  echo -e "\n${limaColour}[+]${endColour}${grayColour} This program requires ${blueColour}sudo${endColour}${grayColour} permissions for a successful installation:${endColour} run sudo $0"
+  echo -e "\n${limaColour}[+]${endColour}${grayColour} This program requires ${blueColour}sudo${endColour}${grayColour} permissions for a successful installation"
   
   echo -ne "\n${purpleColour}[~]${endColour}${grayColour} Install Phantom Terminal?${endColour} ${limaColour}[y/n]:${endColour} "
   read output_show
