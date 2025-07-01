@@ -68,7 +68,7 @@ function installation(){
   SPINNER_PID=$!
   sudo apt install zsh -y &>/dev/null  
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r[✔] ${grayColour}Zsh Installed.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Zsh Installed.${endColour}\n"
 
   spinner "${grayColour}Installing kitty ${endColour}" &
   SPINNER_PID=$!
@@ -77,7 +77,7 @@ function installation(){
   cp kitty/kitty.conf ~/.config/kitty/ 
   sudo cp fonts/HackNerdFont* /usr/share/fonts/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r[✔] ${grayColour}Kitty Installed & Configurated.${endColour}              \n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Kitty Installed & Configurated.${endColour}              \n"
 
   spinner "${grayColour}Installing Starship Powerline ${endColour}" &
   SPINNER_PID=$!
@@ -85,7 +85,7 @@ function installation(){
   echo 'eval "$(starship init zsh)"' >> ~/.zshrc 
   cp starship.toml ~/.config/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r[✔] ${grayColour}Starship Installed & Configurated.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Starship Installed & Configurated.${endColour}\n"
 
   spinner "${grayColour}Installing Lsd & bat (ls & cat with steroids) ${endColour}" &
   SPINNER_PID=$!
@@ -99,9 +99,9 @@ function installation(){
   alias ls='lsd --group-dirs=first'
   alias cat='bat'" >> ~/.zshrc 
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r[✔] ${grayColour}Lsd & Bat Installed.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
 
-  echo -ne "\n[✔] ${grayColour}Finished. Enjoy!${endColour}\n"
+  echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   source ~/.zshrc &>/dev/null
 
 
