@@ -18,7 +18,7 @@
 
 ---
 
-# Phantom Terminal Installer
+## About
 
 A simple Bash script that automates the setup of a clean, modern terminal environment using:
 
