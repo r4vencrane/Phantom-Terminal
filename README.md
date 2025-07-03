@@ -1,6 +1,6 @@
 
 <h1 align="center">
- Network Recon – Fast & Clean Nmap Wrapper
+ Phantom Terminal Installer
 </h1>
 
 
