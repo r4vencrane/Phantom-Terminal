@@ -66,7 +66,21 @@ function installation(){
   echo -e "\n${turquoiseColour}$(for i in $(seq 1 32); do echo -n '='; done)[::] Installing Phantom Terminal [::]$(for i in $(seq 1 31); do echo -n "="; done)${endColour}\n"
   spinner "${grayColour}Installing zsh ${endColour}" &
   SPINNER_PID=$!
-  sudo apt install zsh -y &>/dev/null  
+  sudo apt install zsh -y &>/dev/null 
+  sed -i '/oh-my-zsh.sh/s/^/#/' ~/.zshrc
+
+  # ========== [✔] Instalar plugins: autosuggestions & syntax highlighting ==========
+  mkdir -p ~/.zsh_plugins
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh_plugins/zsh-autosuggestions &>/dev/null
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh_plugins/zsh-syntax-highlighting &>/dev/null
+
+  # ========== [✔] Activar plugins manualmente ==========
+  {
+    echo ""
+    echo "# Zsh Plugins (manual install, no oh-my-zsh)"
+    echo "source \$HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    echo "source \$HOME/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  } >> ~/.zshrc
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Zsh Installed.${endColour}\n"
 
@@ -97,7 +111,7 @@ function installation(){
   alias l='lsd --group-dirs=first'
   alias lla='lsd -lha --group-dirs=first'
   alias ls='lsd --group-dirs=first'
-  alias cat='bat'" >> ~/.zshrc 
+  alias cat='batcat'" >> ~/.zshrc 
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
 
