@@ -114,6 +114,13 @@ function installation(){
   alias cat='batcat'" >> ~/.zshrc 
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
+  #Target
+  spinner "${grayColour}Setting up ${endColour}${limaColour}target.sh${endColour}" &
+  SPINNER_PID=$!
+  sudo cp target.sh /usr/local/bin/target  
+  sudo chmod +x /usr/local/bin/target  
+  kill "$SPINNER_PID" &>/dev/null
+  echo -ne "\r[✔] ${limaColour}target.sh${endColour} ${grayColour}is ready to use.${endColour}\n"
 
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}"
