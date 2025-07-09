@@ -26,6 +26,7 @@ A simple Bash script that automates the setup of a clean, modern terminal enviro
 - Kitty (terminal emulator)
 - Starship (cross-shell prompt)
 - Lsd & Bat (modern replacements for `ls` and `cat`)
+- `target.sh` (helpful tool for copy IP adresses and related content)
 
 ---
 
@@ -85,8 +86,8 @@ Follow the interactive prompt to install the Phantom Terminal setup.
 ### Usage
 
 ```bash
-./target.sh 10.10.14.27     # Saves the IP to ~/.target_ip
-./target.sh copy            # Copies the saved IP to your clipboard
+target 10.10.14.27     # Saves the IP to ~/.target_ip
+target copy            # Copies the saved IP to your clipboard
 ```
 
 ![image](https://github.com/user-attachments/assets/abdf5ba3-585d-4076-9c70-ab8f707d3991)
