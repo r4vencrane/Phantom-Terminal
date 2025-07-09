@@ -39,7 +39,7 @@ A simple Bash script that automates the setup of a clean, modern terminal enviro
 ---
 
 ## Preview
-![phantom-terminal](https://github.com/user-attachments/assets/1b8bb4e3-d4ec-46f1-8c7e-dd1517646fee)
+![phantom-terminal](https://github.com/user-attachments/assets/09a6542d-f64f-4188-9cd5-f4606c3cafcf)
 
 
 
@@ -74,6 +74,28 @@ Follow the interactive prompt to install the Phantom Terminal setup.
 
 ---
 
+## About `target.sh`
+
+`target.sh` is a lightweight helper script designed to simplify handling target IPs during red teaming, CTFs, or penetration testing engagements.
+
+### What it does:
+- Stores a target IP address into a local file (`~/.target_ip`)
+- Allows you to quickly copy that IP to your clipboard using `xclip` (ideal for pasting into terminal tools or reports)
+
+### Usage
+
+```bash
+./target.sh 10.10.14.27     # Saves the IP to ~/.target_ip
+./target.sh copy            # Copies the saved IP to your clipboard
+```
+
+![image](https://github.com/user-attachments/assets/abdf5ba3-585d-4076-9c70-ab8f707d3991)
+
+
+### Note 
+This script stores the IP in plain text in your home directory. It's meant for quick access in controlled environments, not for storing sensitive or long-term data.
+
+---
 
 <p align="center">
   <a href="https://github.com/r4vencrane/Network-Recon/blob/main/LICENSE">
