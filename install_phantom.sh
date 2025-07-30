@@ -122,7 +122,7 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}target.sh${endColour} ${grayColour}is ready to use.${endColour}\n"
 
-  echo -e "\n\n${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal${endColour}"
+  echo -e "\n${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal${endColour}"
   #Arsenal
   spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
   SPINNER_PID=$!
@@ -143,7 +143,7 @@ function installation(){
   sleep 1
 
 
-  echo -ne "\n\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
+  echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n\n"
   source ~/.zshrc &>/dev/null
 
