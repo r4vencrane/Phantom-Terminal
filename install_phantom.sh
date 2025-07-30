@@ -82,7 +82,7 @@ function installation(){
     echo "source \$HOME/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   } >> ~/.zshrc
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Zsh Installed.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Zsh Installed.${endColour}\n"
 
   spinner "${grayColour}Installing kitty ${endColour}" &
   SPINNER_PID=$!
@@ -91,7 +91,7 @@ function installation(){
   cp kitty/kitty.conf ~/.config/kitty/ 
   sudo cp fonts/HackNerdFont* /usr/share/fonts/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Kitty Installed & Configurated.${endColour}              \n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Kitty Installed & Configurated.${endColour}              \n"
 
   spinner "${grayColour}Installing Starship Powerline ${endColour}" &
   SPINNER_PID=$!
@@ -99,7 +99,7 @@ function installation(){
   echo 'eval "$(starship init zsh)"' >> ~/.zshrc 
   cp starship.toml ~/.config/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Starship Installed & Configurated.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Starship Installed & Configurated.${endColour}\n"
 
   spinner "${grayColour}Installing Lsd & bat (ls & cat with steroids) ${endColour}" &
   SPINNER_PID=$!
@@ -113,14 +113,34 @@ function installation(){
   alias ls='lsd --group-dirs=first'
   alias cat='batcat'" >> ~/.zshrc 
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Lsd & Bat Installed.${endColour}\n"
   #Target
   spinner "${grayColour}Setting up ${endColour}${limaColour}target.sh${endColour}" &
   SPINNER_PID=$!
   sudo cp target.sh /usr/local/bin/target  
   sudo chmod +x /usr/local/bin/target  
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r[✔] ${limaColour}target.sh${endColour} ${grayColour}is ready to use.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}target.sh${endColour} ${turquoiseColour}is ready to use.${endColour}\n"
+
+  #Arsenal
+  spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
+  SPINNER_PID=$!
+  git clone https://github.com/r4vencrane/Network-Recon.git
+  cd Network-Recon
+  sudo cp netrecon.sh /usl/local/bin/netrecon
+  chmod +x /usr/local/bin/netrecon
+  cd ../
+  kill "$SPINNER_PID" &>/dev/null
+  echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Network Recon${endColour} ${turquoiseColour}is ready to use.${endColour}\n"
+
+  #Arsenal
+  spinner "${grayColour}Setting up ${endColour}${limaColour}Root Shadow${endColour}" &
+  SPINNER_PID=$!
+  git clone https://github.com/r4vencrane/Root-Shadow.git
+  kill "$SPINNER_PID" &>/dev/null
+  echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${turquoiseColour}is ready to use.${endColour}\n"
+  sleep 1
+  echo -ne "${limaColour}[+]${turquoiseColour}Hacking Arsenal Ready${endColour}"
 
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}"
