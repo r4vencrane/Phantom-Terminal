@@ -122,6 +122,7 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}target.sh${endColour} ${grayColour}is ready to use.${endColour}\n"
 
+  echo -ne "\n\n${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal${endColour}"
   #Arsenal
   spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
   SPINNER_PID=$!
@@ -140,7 +141,6 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
-  echo -ne "${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal Ready${endColour}"
 
 
   echo -ne "\n\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
