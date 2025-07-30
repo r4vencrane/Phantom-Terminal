@@ -60,8 +60,6 @@ function spinner(){
   done
 }
 
-
-
 function installation(){
   echo -e "\n${turquoiseColour}$(for i in $(seq 1 32); do echo -n '='; done)[::] Installing Phantom Terminal [::]$(for i in $(seq 1 31); do echo -n "="; done)${endColour}\n"
   spinner "${grayColour}Installing zsh ${endColour}" &
@@ -86,12 +84,13 @@ function installation(){
 
   spinner "${grayColour}Installing kitty ${endColour}" &
   SPINNER_PID=$!
-  sudo apt install kitty -y &>/dev/null 
+  sudo apt install kitty -y &>/dev/null
+  sudo apt install boxes -y &>/dev/null 
   mkdir ~/.config/kitty  &>/dev/null
   cp kitty/kitty.conf ~/.config/kitty/ &>/dev/null
   sudo cp fonts/HackNerdFont* /usr/share/fonts/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Kitty Installed & Configurated.${endColour}              \n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Kitty${endColour} ${grayColour}Installed & Configurated.${endColour}              \n"
 
   spinner "${grayColour}Installing Starship Powerline ${endColour}" &
   SPINNER_PID=$!
@@ -99,7 +98,7 @@ function installation(){
   echo 'eval "$(starship init zsh)"' >> ~/.zshrc 
   cp starship.toml ~/.config/
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Starship Installed & Configurated.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Starship${endColour} ${grayColour}Installed & Configurated.${endColour}\n"
 
   spinner "${grayColour}Installing Lsd & bat (ls & cat with steroids) ${endColour}" &
   SPINNER_PID=$!
@@ -113,7 +112,7 @@ function installation(){
   alias ls='lsd --group-dirs=first'
   alias cat='batcat'" >> ~/.zshrc 
   kill "$SPINNER_PID" &>/dev/null
-  echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Lsd & Bat Installed.${endColour}\n"
+  echo -ne "\r${limaColour}[✔]${endColour} ${turquoiseColour}Lsd & Bat${endColour} ${grayColour}Installed.${endColour}\n"
   #Target
   spinner "${grayColour}Setting up ${endColour}${limaColour}target.sh${endColour}" &
   SPINNER_PID=$!
@@ -144,7 +143,7 @@ function installation(){
   
   gsettings set org.mate.background picture-filename /usr/share/backgrounds/hackthebox-alt.jpg &>/dev/null
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
-  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n"
+  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open ${turquoiseColour}kitty${endColour} ${grayColour}terminal${endColour}\n"
   source ~/.zshrc &>/dev/null
 
 
