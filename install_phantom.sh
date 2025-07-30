@@ -126,7 +126,8 @@ function installation(){
   spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Network-Recon.git &>/dev/null
-  sudo cp Network-Recon/netrecon.sh /usl/local/bin/netrecon
+  mv Network-Recon ../
+  sudo cp ../Network-Recon/netrecon.sh /usl/local/bin/netrecon
   sudo chmod +x /usr/local/bin/netrecon
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Network Recon${endColour} ${grayColour}is ready to use.${endColour}\n"
@@ -135,6 +136,7 @@ function installation(){
   spinner "${grayColour}Setting up ${endColour}${limaColour}Root Shadow${endColour}" &
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Root-Shadow.git &>/dev/null
+  mv Root-Shadow ../
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
