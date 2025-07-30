@@ -141,10 +141,10 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
-
-
+  
+  gsettings set org.mate.background picture-filename /usr/share/backgrounds/hackthebox-alt.jpg &>/dev/null
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
-  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n\n"
+  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n"
   source ~/.zshrc &>/dev/null
 
 
