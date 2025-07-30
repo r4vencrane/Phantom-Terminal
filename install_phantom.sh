@@ -127,7 +127,7 @@ function installation(){
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Network-Recon.git &>/dev/null
   mv Network-Recon ../
-  sudo cp ../Network-Recon/netrecon.sh /usl/local/bin/netrecon
+  sudo cp ../Network-Recon/netrecon.sh /usr/local/bin/netrecon
   sudo chmod +x /usr/local/bin/netrecon
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Network Recon${endColour} ${grayColour}is ready to use.${endColour}\n"
@@ -141,6 +141,7 @@ function installation(){
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
   echo -ne "${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal Ready${endColour}"
+
 
   echo -ne "\n\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n\n"
