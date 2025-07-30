@@ -87,8 +87,8 @@ function installation(){
   spinner "${grayColour}Installing kitty ${endColour}" &
   SPINNER_PID=$!
   sudo apt install kitty -y &>/dev/null 
-  mkdir ~/.config/kitty 
-  cp kitty/kitty.conf ~/.config/kitty/ 
+  mkdir ~/.config/kitty  &>/dev/null
+  cp kitty/kitty.conf ~/.config/kitty/ &>/dev/null
   sudo cp fonts/HackNerdFont* /usr/share/fonts/
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${grayColour}Kitty Installed & Configurated.${endColour}              \n"
@@ -122,12 +122,12 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}target.sh${endColour} ${grayColour}is ready to use.${endColour}\n"
 
-  echo -ne "\n\n${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal${endColour}"
+  echo -e "\n\n${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal${endColour}"
   #Arsenal
   spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Network-Recon.git &>/dev/null
-  mv Network-Recon ../
+  mv Network-Recon ../ &>/dev/null
   sudo cp ../Network-Recon/netrecon.sh /usr/local/bin/netrecon
   sudo chmod +x /usr/local/bin/netrecon
   kill "$SPINNER_PID" &>/dev/null
@@ -137,7 +137,7 @@ function installation(){
   spinner "${grayColour}Setting up ${endColour}${limaColour}Root Shadow${endColour}" &
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Root-Shadow.git &>/dev/null
-  mv Root-Shadow ../
+  mv Root-Shadow ../ &>/dev/null
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
