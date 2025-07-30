@@ -128,7 +128,7 @@ function installation(){
   git clone https://github.com/r4vencrane/Network-Recon.git &>/dev/null
   cd Network-Recon
   sudo cp netrecon.sh /usl/local/bin/netrecon
-  chmod +x /usr/local/bin/netrecon
+  sudo chmod +x /usr/local/bin/netrecon
   cd ../
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Network Recon${endColour} ${grayColour}is ready to use.${endColour}\n"
@@ -140,10 +140,10 @@ function installation(){
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Root Shadow${endColour} ${grayColour}is ready to use.${endColour}\n"
   sleep 1
-  echo -ne "${limaColour}[+]${turquoiseColour} Hacking Arsenal Ready${endColour}"
+  echo -ne "${limaColour}[+]${endColour} ${turquoiseColour}Hacking Arsenal Ready${endColour}"
 
   echo -ne "\n\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
-  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}"
+  echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open kitty terminal${endColour}\n\n"
   source ~/.zshrc &>/dev/null
 
 
