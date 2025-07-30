@@ -126,10 +126,8 @@ function installation(){
   spinner "${grayColour}Setting up ${endColour}${limaColour}Network Recon${endColour}" &
   SPINNER_PID=$!
   git clone https://github.com/r4vencrane/Network-Recon.git &>/dev/null
-  cd Network-Recon
-  sudo cp netrecon.sh /usl/local/bin/netrecon
+  sudo cp Network-Recon/netrecon.sh /usl/local/bin/netrecon
   sudo chmod +x /usr/local/bin/netrecon
-  cd ../
   kill "$SPINNER_PID" &>/dev/null
   echo -ne "\r${limaColour}[✔]${endColour} ${limaColour}Network Recon${endColour} ${grayColour}is ready to use.${endColour}\n"
 
