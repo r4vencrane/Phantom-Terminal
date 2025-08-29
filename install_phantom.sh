@@ -144,9 +144,7 @@ function installation(){
   gsettings set org.mate.background picture-filename /usr/share/backgrounds/hackthebox-alt.jpg &>/dev/null
   echo -ne "\n${limaColour}[✔]${endColour} ${grayColour}Finished. Enjoy!${endColour}\n"
   echo -e "${limaColour}[+]${endColour} ${grayColour}Now you can open ${blueColour}kitty${endColour} ${grayColour}terminal${endColour}\n"
-  source ~/.zshrc &>/dev/null
-  zsh
-  kitty  
+  source ~/.zshrc &>/dev/null  
 
 
 }
