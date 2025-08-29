@@ -24,18 +24,17 @@ brightWhiteColour='\033[1;38;5;15m' # #ffffff (blanco puro)
 # --- Reset ---
 endColour='\033[0m'
 
-
-
 FILE="$HOME/.target_ip"
 
 if [[ "$1" == "copy" ]]; then
     if [ -f "$FILE" ]; then
-      cat "$FILE" | xclip -selection clipboard
-      echo -e "${limaColour}[+]${endColour} ${grayColour}IP copied${endColour}: ${turquoiseColour}$(cat $FILE)${endColour}"
+      tr -d '\n' < "$FILE" | xclip -selection clipboard
+      echo -e "${limaColour}[+]${endColour} ${grayColour}IP copied${endColour}: ${turquoiseColour}$(tr -d '\n' < "$FILE")${endColour}"
     else
       echo -e "${redColour}[-] Error: El archivo $FILE no existe${endColour}"
     fi
 else
-    echo "$1" > "$FILE"
+    echo -n "$1" > "$FILE"
     echo -e "${limaColour}[+]${endColour} ${grayColour}Saved:${endColour} ${turquoiseColour}$1${endColour}"
 fi
+
